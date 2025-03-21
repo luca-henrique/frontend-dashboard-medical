@@ -8,12 +8,12 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
-import ColorModeSelect from "../../theme/ColorModeSelect";
+import ColorModeSelect from "../../components/molecules/color-mode-select/color-mode-select";
 
 import { Card, SignInContainer } from "./styled";
 import { Input } from "../../components/atoms/input/input";
 import { useForm } from "react-hook-form";
-import { Copyright } from "../../components/molecules/copyright/Copyright";
+import { Copyright } from "../../components/molecules/copyright/copyright";
 
 export default function SignIn() {
   const [emailError, setEmailError] = React.useState(false);
