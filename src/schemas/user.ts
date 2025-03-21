@@ -7,13 +7,6 @@ import {
   VALIDATION,
 } from "../validations/validations";
 
-const ExtraQuestionResponsesSchema = z.array(
-  z.object({
-    extra_question_id: z.number().optional(),
-    answer: z.string().optional(),
-  })
-);
-
 export const DetailsPersonRedeemSchema = z.object({
   fullName: z.string(),
   document: z
@@ -24,6 +17,9 @@ export const DetailsPersonRedeemSchema = z.object({
       message: errorMessages.document.invalid,
     }),
   email: z.string().email(),
+});
+
+export const AddressSchema = z.object({
   cep: z
     .string()
     .min(VALIDATION.ADDRESS.CEP_LENGTH, errorMessages.address.cep.minLength)
@@ -44,8 +40,6 @@ export const DetailsPersonRedeemSchema = z.object({
     .length(VALIDATION.ADDRESS.UF_LENGTH, errorMessages.address.uf.invalid)
     .regex(/^[A-Z]{2}$/, errorMessages.address.uf.invalid),
   country: z.string().min(1, errorMessages.address.country.required),
-  size: z.string().optional(),
-  extra_question: ExtraQuestionResponsesSchema,
 });
 
 export type DetailsPersonRedeemSchemaProps = z.infer<
