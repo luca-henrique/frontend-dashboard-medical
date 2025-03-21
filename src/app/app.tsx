@@ -1,13 +1,15 @@
 
-import { Home } from '../pages/home';
 import { ReactQueryClient } from './providers/react-query';
-
+import { BrowserRouter } from "react-router";
+import { AppRoutes } from './routes/routes';
 
 export default function App() {
   return (
-    <ReactQueryClient>
-      <Home />
-    </ReactQueryClient>
+    <BrowserRouter>
+      <ReactQueryClient>
+        <AppRoutes />
+      </ReactQueryClient>
+    </BrowserRouter>
   );
 }
 
