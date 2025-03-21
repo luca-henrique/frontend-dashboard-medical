@@ -6,7 +6,7 @@ import NavbarBreadcrumbs from './NavbarBreadcrumbs';
 import MenuButton from './MenuButton';
 
 import Search from './Search';
-import ColorModeIconDropdown from '../../../components/molecules/color-mode-icon-dropdown/color-mode-icon-dropdown';
+import ColorModeIconDropdown from './color-mode-icon-dropdown/color-mode-icon-dropdown'
 
 export default function Header() {
   return (
