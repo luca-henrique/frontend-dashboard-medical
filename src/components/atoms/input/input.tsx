@@ -1,4 +1,4 @@
-import { FormControl, TextField, TextFieldProps } from "@mui/material";
+import { FormControl, FormLabel, TextField, TextFieldProps } from "@mui/material";
 import { Controller } from "react-hook-form";
 import { formatDocument } from "../../../utils/format-document";
 import { formatCep } from "../../../utils/format-cep";
@@ -7,9 +7,10 @@ export type MaskType = "document" | 'cep';
 
 export type InputProps = {
   label: string;
-  control: any;
+  control?: any;
   name: string;
   mask?: MaskType;
+  error: boolean;
 } & TextFieldProps;
 
 
@@ -26,18 +27,21 @@ const formatByMask = (value: string, mask?: MaskType): string => {
   }
 };
 
-export const Input = ({ label, control, name, mask, ...props }: InputProps) => {
+export const Input = ({ label, control, name, mask, error, id, ...props }: InputProps) => {
   return (
     <Controller
       control={control}
       name={name}
       render={({ field }) => (
-        <FormControl fullWidth variant="standard">
+        <FormControl>
+          <FormLabel htmlFor={id}>{label}</FormLabel>
           <TextField
-            id={name}
+            error={error}
+            autoFocus
+            required
             fullWidth
-            label={label}
-            variant="standard"
+            variant="outlined"
+            color={error ? 'error' : 'primary'}
             {...props}
             {...field}
             value={field.value ?? ""}

@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Step from '@mui/material/Step';
@@ -18,7 +17,6 @@ import InfoMobile from './components/InfoMobile';
 import PaymentForm from './components/PaymentForm';
 import Review from './components/Review';
 import SitemarkIcon from './components/SitemarkIcon';
-import AppTheme from '../sign-in.tsx/AppTheme';
 import ColorModeIconDropdown from '../../theme/ColorModeIconDropdown';
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
@@ -43,8 +41,7 @@ export default function Checkout(props: { disableCustomTheme?: boolean }) {
     setActiveStep(activeStep - 1);
   };
   return (
-    <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
+    <>
       <Box sx={{ position: 'fixed', top: '1rem', right: '1rem' }}>
         <ColorModeIconDropdown />
       </Box>
@@ -262,6 +259,6 @@ export default function Checkout(props: { disableCustomTheme?: boolean }) {
           </Box>
         </Grid>
       </Grid>
-    </AppTheme>
+    </>
   );
 }
