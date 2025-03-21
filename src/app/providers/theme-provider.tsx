@@ -1,25 +1,21 @@
 import * as React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import type { ThemeOptions } from '@mui/material/styles';
-import { inputsCustomizations } from './customizations/inputs';
-import { dataDisplayCustomizations } from './customizations/dataDisplay';
-import { feedbackCustomizations } from './customizations/feedback';
-import { navigationCustomizations } from './customizations/navigation';
-import { surfacesCustomizations } from './customizations/surfaces';
-import { colorSchemes, typography, shadows, shape } from './themePrimitives';
-import { xThemeComponents } from './customizations';
+import { inputsCustomizations } from '../../theme/customizations/inputs';
+import { dataDisplayCustomizations } from '../../theme/customizations/dataDisplay';
+import { feedbackCustomizations } from '../../theme/customizations/feedback';
+import { navigationCustomizations } from '../../theme/customizations/navigation';
+import { surfacesCustomizations } from '../../theme/customizations/surfaces';
+import { colorSchemes, typography, shadows, shape } from '../../theme/themePrimitives';
+import { xThemeComponents } from '../../theme/customizations';
 
 interface AppThemeProps {
   children: React.ReactNode;
-  /**
-   * This is for the docs site. You can ignore it or remove it.
-   */
   disableCustomTheme?: boolean;
   themeComponents?: ThemeOptions['components'];
 }
 
-export default function AppTheme(props: AppThemeProps) {
-  const { children, disableCustomTheme, themeComponents } = props;
+const AppTheme = ({ children, disableCustomTheme, themeComponents }: AppThemeProps) => {
   const theme = React.useMemo(() => {
     return disableCustomTheme
       ? {}
@@ -53,3 +49,6 @@ export default function AppTheme(props: AppThemeProps) {
     </ThemeProvider>
   );
 }
+
+
+export default AppTheme
