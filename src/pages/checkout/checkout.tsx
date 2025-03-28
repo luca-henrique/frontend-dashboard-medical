@@ -11,11 +11,11 @@ import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
 import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
-import AddressForm from './components/AddressForm';
+import AddressForm from './components/MedicalBasicInformation';
 import Info from './components/Info';
 import InfoMobile from './components/InfoMobile';
-import PaymentForm from './components/PaymentForm';
-import Review from './components/Review';
+import PaymentForm from '../../components/molecules/professional-data/professional-data';
+import Review from '../../components/molecules/professional-location/professional-location';
 import SitemarkIcon from './components/SitemarkIcon';
 import ColorModeIconDropdown from '../../components/molecules/color-mode-icon-dropdown/color-mode-icon-dropdown';
 
@@ -32,6 +32,7 @@ function getStepContent(step: number) {
       throw new Error('Unknown step');
   }
 }
+
 export default function Checkout(props: { disableCustomTheme?: boolean }) {
   const [activeStep, setActiveStep] = React.useState(0);
   const handleNext = () => {

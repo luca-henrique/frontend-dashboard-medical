@@ -8,14 +8,14 @@ import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 
-import ColorModeSelect from "../../components/molecules/color-mode-select/color-mode-select";
+import ColorModeSelect from "../../../components/molecules/color-mode-select/color-mode-select";
 
 import { Card, SignInContainer } from "./styled";
-import { Input } from "../../components/atoms/input/input";
+import { Input } from "../../../components/atoms/input/input";
 import { useForm } from "react-hook-form";
-import { Copyright } from "../../components/molecules/copyright/copyright";
+import { Copyright } from "../../../components/molecules/copyright/copyright";
 
-export default function SignIn() {
+export const SignIn = () => {
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
@@ -92,10 +92,9 @@ export default function SignIn() {
             Entrar
           </Button>
           <Link
-            component="button"
-            type="button"
             variant="body2"
             sx={{ alignSelf: "center" }}
+            href="/recovery-account"
           >
             Esqueceu sua senha?
           </Link>
@@ -104,7 +103,7 @@ export default function SignIn() {
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Typography sx={{ textAlign: "center" }}>
             Não tem uma conta?{" "}
-            <Link href="#" variant="body2" sx={{ alignSelf: "center" }}>
+            <Link href="/sign-up" variant="body2" sx={{ alignSelf: "center" }}>
               Inscreva-se
             </Link>
           </Typography>

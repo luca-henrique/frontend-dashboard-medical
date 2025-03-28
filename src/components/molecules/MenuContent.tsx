@@ -12,12 +12,12 @@ import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const mainListItems = [
   { text: 'Home', icon: <HomeRoundedIcon /> },
-  { text: 'Analytics', icon: <AnalyticsRoundedIcon /> },
-  { text: 'Clients', icon: <PeopleRoundedIcon /> },
-  { text: 'Tasks', icon: <AssignmentRoundedIcon /> },
+  { text: 'Clientes', icon: <PeopleRoundedIcon /> },
+  { text: 'Agenda', icon: <CalendarMonthIcon /> },
 ];
 
 const secondaryListItems = [
